@@ -12,19 +12,19 @@ public class Zombie {
 
     private String name;
 
-    private Integer health;
+    private Double health;
 
     public String getName(){
         return name;
     }
 
 
-    public Zombie(String name, Integer health){
+    public Zombie(String name, Double health){
         this.name = name;
         this.health = health;
     }
 
-    public void receiveDamage(Integer damage) {
+    public void receiveDamage(Double damage) {
         health = health - damage;
 
         if (health <= 0) {

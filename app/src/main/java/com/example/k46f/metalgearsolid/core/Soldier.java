@@ -21,7 +21,7 @@ public class Soldier {
 
     private Item[] items;
 
-    private Gun weapon;
+    protected Gun weapon;
 
     // -- CONSTRUCTORS
 
@@ -48,8 +48,12 @@ public class Soldier {
         Log.i(LOG_TAG, "Receive " + damage + "of damage.");
     }
 
+    protected Double getDamage() {
+        return weapon.getDamage().doubleValue();
+    }
+
     public void hurtZombie(Zombie zombie) {
-        Integer damage = weapon.getDamage();
+        Double damage = getDamage();
         zombie.receiveDamage(damage);
         Log.i(LOG_TAG, "Hurting zombie " + zombie.getName() + "Whit " + damage + "of damage.");
     }

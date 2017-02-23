@@ -13,6 +13,7 @@ public class SuperSoldier extends Soldier {
     final String LOG_TAG = ">>>>>> SuperSoldier ";
 
     private static final Integer SUPER_SOLDIER_HEALTH = 250;
+    private static final Double SUPER_SOLDIER_MULTIPLIER = 2.5;
 
 
     public void performCQC(Soldier soldier) {
@@ -41,9 +42,10 @@ public class SuperSoldier extends Soldier {
         Log.i(LOG_TAG, "Hurting super zombie " + superZombie.getName() + "with " + damage + "of damage.");
     }
 
-    public void hurtZombie(Zombie zombie, Integer damage) {
-        Log.i(LOG_TAG, "Hurting zombie " + zombie.getName() + "with " + damage * 2.5 + "of damage.");
-    }
 
+    @Override
+    protected Double getDamage() {
+        return weapon.getDamage() * SUPER_SOLDIER_MULTIPLIER;
+    }
 }
 

@@ -11,7 +11,7 @@ public class SuperZombie extends Zombie {
     final String LOG_TAG = ">>>>>> Super Zombie ";
 
     public SuperZombie(String name){
-        super(name, (int) (Math.random()*300+200));
+        super(name, (Math.random() * 300 + 200));
     }
 
     public void run() {
