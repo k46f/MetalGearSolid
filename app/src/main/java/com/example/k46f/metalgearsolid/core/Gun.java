@@ -22,4 +22,8 @@ public class Gun {
         this.name = name;
     }
 
+    public Integer getDamage() {
+        return damage;
+    }
+
 }

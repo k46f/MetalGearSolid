@@ -24,11 +24,21 @@ public class Zombie {
         this.health = health;
     }
 
-    public void receiveDamage(Integer damage){
+    public void receiveDamage(Integer damage) {
+        health = health - damage;
+
+        if (health <= 0) {
+            die();
+        }
+
         Log.i(LOG_TAG, "Receive " + damage + "of damage.");
     }
 
     public void walk (Integer speed){
         Log.i(LOG_TAG, "Walking at" + speed + "Cm/s.");
+    }
+
+    private void die() {
+        Log.i(LOG_TAG, "Zombie formerly named " + name + " has died AGAIN.");
     }
 }

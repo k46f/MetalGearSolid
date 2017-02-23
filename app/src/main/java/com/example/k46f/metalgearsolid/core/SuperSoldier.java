@@ -12,6 +12,8 @@ public class SuperSoldier extends Soldier {
 
     final String LOG_TAG = ">>>>>> SuperSoldier ";
 
+    private static final Integer SUPER_SOLDIER_HEALTH = 250;
+
 
     public void performCQC(Soldier soldier) {
         Log.i(LOG_TAG, "Performing CQC.");
@@ -27,7 +29,8 @@ public class SuperSoldier extends Soldier {
     }
 
     public SuperSoldier(String name) {
-        super(name,250);
+        super(name);
+        health = SUPER_SOLDIER_HEALTH;
     }
 
     public void killSuperZombie(SuperZombie superZombie) {
