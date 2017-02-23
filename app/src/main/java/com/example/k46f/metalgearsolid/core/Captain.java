@@ -23,6 +23,6 @@ public class Captain extends Soldier {
         super(name, 100);
     }
     public void hurtZombie(Zombie zombie, Integer damage) {
-        Log.i(LOG_TAG, "Hurting zombie " + zombie.getName() + "with " + damage * 1.1 + "of damage.");
+        Log.i(LOG_TAG, "Hurting zombie " + zombie.getName() + "with " + damage * 1.2 + "of damage.");
     }
 }
