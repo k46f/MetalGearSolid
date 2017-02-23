@@ -8,17 +8,17 @@ import android.util.Log;
 
 public class SuperZombie extends Zombie {
 
+    protected final Double ZOMBIE_MIN_HEALTH = 200.0;
+    protected final Double ZOMBIE_MAX_HEALTH = 300.0;
+
     final String LOG_TAG = ">>>>>> Super Zombie ";
 
     public SuperZombie(String name){
-        super(name, (Math.random() * 300 + 200));
+        super(name);
     }
 
     public void run() {
         walk(300);
     }
 
-    public void receiveDamage(Integer damage) {
-        Log.i(LOG_TAG, "receive " + damage + "of damage.");
-    }
 }

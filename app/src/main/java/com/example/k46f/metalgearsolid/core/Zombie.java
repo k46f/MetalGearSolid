@@ -2,26 +2,31 @@ package com.example.k46f.metalgearsolid.core;
 
 import android.util.Log;
 
+import java.util.Random;
+
 /**
  * Created by k46f on 9/02/2017.
  */
 
 public class Zombie {
 
-    final String LOG_TAG = "Zombie >>>>>> ";
+    final String LOG_TAG = "Zombie >>>";
+
+    protected final Double ZOMBIE_MIN_HEALTH = 100.0;
+    protected final Double ZOMBIE_MAX_HEALTH = 200.0;
 
     private String name;
 
     private Double health;
 
-    public String getName(){
+    public String getName() {
         return name;
     }
 
 
-    public Zombie(String name, Double health){
+    public Zombie(String name) {
         this.name = name;
-        this.health = health;
+        this.health = generateRandomHealth();
     }
 
     public void receiveDamage(Double damage) {
@@ -32,6 +37,13 @@ public class Zombie {
         }
 
         Log.i(LOG_TAG, "Receive " + damage + "of damage.");
+    }
+
+    private Double generateRandomHealth() {
+        Random r = new Random();
+        Integer result = r.nextInt(ZOMBIE_MAX_HEALTH.intValue() - ZOMBIE_MIN_HEALTH.intValue()) +
+                ZOMBIE_MIN_HEALTH.intValue();
+        return result.doubleValue();
     }
 
     public void walk (Integer speed){
