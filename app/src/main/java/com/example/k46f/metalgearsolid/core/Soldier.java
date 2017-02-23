@@ -8,6 +8,8 @@ import android.util.Log;
 
 public class Soldier {
 
+    // -- FIELDS
+
     final String LOG_TAG = ">>>>>> Soldier";
 
     private String name;
@@ -15,6 +17,17 @@ public class Soldier {
     private Integer health;
 
     private Item[] items;
+
+    private Gun weapon;
+
+    // -- CONSTRUCTORS
+
+    public Soldier(String name, Integer health){
+        this.name = name;
+        this.health = health;
+    }
+
+    // -- METHODS
 
     public String getName() {
         return name;
@@ -26,11 +39,6 @@ public class Soldier {
 
     public void run(){
         walk(200);
-    }
-
-    public Soldier(String name, Integer health){
-        this.name = name;
-        this.health = health;
     }
 
     public void killZombie(Zombie zombie) {
@@ -45,8 +53,9 @@ public class Soldier {
         Log.i(LOG_TAG, "Hurting zombie " + zombie.getName() + "Whit " + damage + "of damage.");
     }
 
-    public void equipWeapon(Gun name) {
-        Log.i(LOG_TAG, "Equipped with " + name.getName() + ".");
+    public void equipWeapon(Gun weapon) {
+        this.weapon = weapon;
+        Log.i(LOG_TAG, "Equipped with " + weapon.getName() + ".");
     }
 
 }
